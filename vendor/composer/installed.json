@@ -6593,17 +6593,17 @@
         },
         {
             "name": "spatie/laravel-sitemap",
-            "version": "6.2.1",
-            "version_normalized": "6.2.1.0",
+            "version": "6.2.2",
+            "version_normalized": "6.2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sitemap.git",
-                "reference": "72af4b688705dfabdc5f24ed00d79325cff57d0c"
+                "reference": "6527aa95746b35fbaf6254b773bd99f147fe4f77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/72af4b688705dfabdc5f24ed00d79325cff57d0c",
-                "reference": "72af4b688705dfabdc5f24ed00d79325cff57d0c",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/6527aa95746b35fbaf6254b773bd99f147fe4f77",
+                "reference": "6527aa95746b35fbaf6254b773bd99f147fe4f77",
                 "shasum": ""
             },
             "require": {
@@ -6622,7 +6622,7 @@
                 "spatie/phpunit-snapshot-assertions": "^4.0",
                 "spatie/temporary-directory": "^2.0"
             },
-            "time": "2022-08-23T12:41:34+00:00",
+            "time": "2022-09-22T07:47:38+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -6656,7 +6656,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sitemap/tree/6.2.1"
+                "source": "https://github.com/spatie/laravel-sitemap/tree/6.2.2"
             },
             "funding": [
                 {

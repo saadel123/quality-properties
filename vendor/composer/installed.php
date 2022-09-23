@@ -1095,12 +1095,12 @@
             'dev_requirement' => false,
         ),
         'spatie/laravel-sitemap' => array(
-            'pretty_version' => '6.2.1',
-            'version' => '6.2.1.0',
+            'pretty_version' => '6.2.2',
+            'version' => '6.2.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../spatie/laravel-sitemap',
             'aliases' => array(),
-            'reference' => '72af4b688705dfabdc5f24ed00d79325cff57d0c',
+            'reference' => '6527aa95746b35fbaf6254b773bd99f147fe4f77',
             'dev_requirement' => false,
         ),
         'spatie/robots-txt' => array(
