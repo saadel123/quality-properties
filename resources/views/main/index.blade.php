@@ -82,8 +82,8 @@
                             style="height: 1px;">
                             <ul class="nav navbar-nav menu">
                                 <li><a href="./">Accueil</a></li>
-                                <li><a href="qui-sommes-nous.php">Qui sommes-nous</a></li>
-                                <li><a href="nous-services.php">Nos services</a></li>
+                                <li><a href="{{url('/immobilier-luxe-maroc')}}">Qui sommes-nous</a></li>
+                                <li><a href="{{url('/achat-vente-location-immobilier-luxe')}}">Nos services</a></li>
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos
                                         Biens </a>
                                     <ul class="dropdown-menu sous-menu">
@@ -96,8 +96,8 @@
                                           <li><a href="nos-plus.php">Nos plus</a></li>
                                         <li><a href="actualite.php">Actualité</a></li>
                                         -->
-                                <li><a href="actualites.php">Blog</a></li>
-                                <li><a href="contact.php">Contact</a></li>
+                                <li><a href="{{url('/actualite-immobilier-maroc')}}">Blog</a></li>
+                                <li><a href="{{url('/contact')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>

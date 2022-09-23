@@ -19,9 +19,15 @@ use TCG\Voyager\Facades\Voyager;
 Route::get('/', function () {
     return view('main.index');
 });
-
-
-
+Route::get('/immobilier-luxe-maroc', function () {
+    return view('main.immobilier-luxe-maroc');
+});
+Route::get('/achat-vente-location-immobilier-luxe', function () {
+    return view('main.nous-services');
+});
+Route::get('/contact', function () {
+    return view('main.contact');
+});
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
