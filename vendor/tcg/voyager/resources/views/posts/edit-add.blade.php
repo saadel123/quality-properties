@@ -231,7 +231,7 @@
                     </div>
 
                     <!-- ### IMAGE ### -->
-                    <div class="panel panel-bordered panel-primary">
+                    {{-- <div class="panel panel-bordered panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="icon wb-image"></i> {{ __('voyager::post.image') }}</h3>
                             <div class="panel-actions">
@@ -244,7 +244,7 @@
                             @endif
                             <input type="file" name="image">
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- ### SEO CONTENT ### -->
                     <div class="panel panel-bordered panel-info">

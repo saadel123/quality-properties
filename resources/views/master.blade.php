@@ -39,7 +39,7 @@
     <title>Quality Properties - Immobilier résidentiel de luxe - Agence immobilière Casablanca - Villa a vendre - Casa
         Anfa - Villa Casa Anfa - Villa de luxe Casablanca - Villa Casablanca</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('assests/img/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assests/img/fav-icon.png') }}">
     <link rel="stylesheet" href="{{ asset('assests/css/style.css') }}">
 
     @yield('stylesheet')
