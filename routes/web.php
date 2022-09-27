@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BienController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 
@@ -19,6 +20,14 @@ use TCG\Voyager\Facades\Voyager;
 Route::get('/', function () {
     return view('main.index');
 });
+Route::get('/appartement-a-vendre', [BienController::class, 'appartement']);
+Route::get('/location-vente-villa-maroc', [BienController::class, 'villa']);
+Route::get('/recherche-villa', [BienController::class, 'rechercheVilla']);
+
+
+
+Route::get('/terrain-a-vendre-au-maroc', [BienController::class, 'terrain']);
+Route::get('/bein/{slug}', [BienController::class, 'show']);
 Route::get('/immobilier-luxe-maroc', function () {
     return view('main.immobilier-luxe-maroc');
 });

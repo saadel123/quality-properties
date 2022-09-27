@@ -1,25 +1,19 @@
 @extends('master')
 
 @section('content')
-
     <div class="container-fluid">
-
         <div class="row slide-part">
             <div class="col-md-12 " style="margin: 0px;padding: 0px;">
-
                 <div class="logo-part">
                     <img src="{{ asset('assests/img/logo.png') }}" alt="" />
                 </div>
-
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <!--
-                                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                                  <li data-target="#myCarousel" data-slide-to="2"></li>                 -->
+                                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                              <li data-target="#myCarousel" data-slide-to="1"></li>
+                                              <li data-target="#myCarousel" data-slide-to="2"></li>                 -->
                     </ol>
 
                     <!-- Wrapper for slides -->
@@ -37,34 +31,33 @@
                             </div>
                         </div>
                         <!--
-                                  <div class="item">
-                                    <img src="img/slide-2.jpg" alt="Chicago" style="width:100%;">
-                                    <div class="carousel-caption">
-                                        <div class="slide-text"><span style="">À vendre</span><a href="villas.php" style="">voir plus <i class="fa fa-angle-right"></i></a>
-                                            </div>
-                                            <div class="slide-text-2">
-                                                <span class="title">VILLAS DE LUXE</span>
-                                                <span class="detail"> Casablanca  <i class="fa fa-map-marker"></i> </span>
-                                         </div>
-                                  </div>
-                                  </div>
-                                  <div class="item">
-                                    <img src="img/slide-3.jpg" alt="Chicago" style="width:100%;">
-                                    <div class="carousel-caption">
-                                        <div class="slide-text"><span style="">À vendre</span><a href="villa    s.php" style="">voir plus <i class="fa fa-angle-right"></i></a>
-                                            </div>
-                                            <div class="slide-text-2">
-                                                <span class="title">VILLAS DE LUXE</span>
-                                                <span class="detail"> Casablanca  <i class="fa fa-map-marker"></i> </span>
-                                        </div>
-                                    </div>
-                                  </div>
-                                  -->
+                                              <div class="item">
+                                                <img src="img/slide-2.jpg" alt="Chicago" style="width:100%;">
+                                                <div class="carousel-caption">
+                                                    <div class="slide-text"><span style="">À vendre</span><a href="villas.php" style="">voir plus <i class="fa fa-angle-right"></i></a>
+                                                        </div>
+                                                        <div class="slide-text-2">
+                                                            <span class="title">VILLAS DE LUXE</span>
+                                                            <span class="detail"> Casablanca  <i class="fa fa-map-marker"></i> </span>
+                                                     </div>
+                                              </div>
+                                              </div>
+                                              <div class="item">
+                                                <img src="img/slide-3.jpg" alt="Chicago" style="width:100%;">
+                                                <div class="carousel-caption">
+                                                    <div class="slide-text"><span style="">À vendre</span><a href="villa    s.php" style="">voir plus <i class="fa fa-angle-right"></i></a>
+                                                        </div>
+                                                        <div class="slide-text-2">
+                                                            <span class="title">VILLAS DE LUXE</span>
+                                                            <span class="detail"> Casablanca  <i class="fa fa-map-marker"></i> </span>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                              -->
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="row navbarColor">
             <div class="col-md-12">
                 <nav class="navbar " role="navigation">
@@ -82,31 +75,25 @@
                             style="height: 1px;">
                             <ul class="nav navbar-nav menu">
                                 <li><a href="./">Accueil</a></li>
-                                <li><a href="{{url('/immobilier-luxe-maroc')}}">Qui sommes-nous</a></li>
-                                <li><a href="{{url('/achat-vente-location-immobilier-luxe')}}">Nos services</a></li>
+                                <li><a href="{{ url('/immobilier-luxe-maroc') }}">Qui sommes-nous</a></li>
+                                <li><a href="{{ url('/achat-vente-location-immobilier-luxe') }}">Nos services</a></li>
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos
                                         Biens </a>
                                     <ul class="dropdown-menu sous-menu">
-                                        <li><a href="appartement.php">Appartements</a></li>
-                                        <li><a href="villas.php">Villas</a></li>
-                                        <li><a href="terrains.php">Terrains</a></li>
+                                        <li><a href="{{ url('/appartement-a-vendre') }}">Appartements</a></li>
+                                        <li><a href="{{ url('/location-vente-villa-maroc') }}">Villas</a></li>
+                                        <li><a href="{{ url('/terrain-a-vendre-au-maroc') }}">Terrains</a></li>
                                     </ul>
                                 </li>
-                                <!--
-                                          <li><a href="nos-plus.php">Nos plus</a></li>
-                                        <li><a href="actualite.php">Actualité</a></li>
-                                        -->
-                                <li><a href="{{url('/actualite-immobilier-maroc')}}">Blog</a></li>
-                                <li><a href="{{url('/contact')}}">Contact</a></li>
+                                <li><a href="{{ url('/actualite-immobilier-maroc') }}">Blog</a></li>
+                                <li><a href="{{ url('/contact') }}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </div>
         </div>
-
     </div>
-
     <div class="container-fluid" id="home">
         <div class="row p-5 row-1140" style="height: 100px;">
             <div class="col-md-6 " data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
@@ -115,7 +102,6 @@
                 <div class="col-sm-3" style="margin-left:-10px;">
                     <img src="{{ asset('assests/img/home-img-1.png') }}" class="image1-qui">
                     <img src="{{ asset('assests/img/home-img-2.png') }}" class="image2-qui">
-
                 </div>
                 <div class="col-sm-3" style="margin-top:-60px;">
                     <div class="qui-sommes-nous">
@@ -136,7 +122,6 @@
                 data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
                 data-aos-anchor-placement="top-center" style="margin-top:25px;width:900px">
                 <div class="col-sm-3" style="margin-left:-60px;margin-top:90px;">
-
                     <div class="col-sm-3">
                         <div class="qui-sommes-nous" style="margin-left:55px;margin-top:-60px !important;">
                             <a href="nous-services.php">
@@ -152,7 +137,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-sm-3" style="margin-left:400px;margin-top:-100px !important;">
                     <img src="{{ asset('assests/img/home-img-3.png') }}" class="image3-nos" />
                     <div style="float: left;width: 280px;"><img src="{{ asset('assests/img/home-img-4.png') }}"
@@ -160,12 +144,9 @@
                     <div style="float: left;width: 280px;margin-top:-400px;margin-left:290px;"><img
                             src="{{ asset('assests/img/home-img-5.png') }}" class="image5-nos" /></div>
                 </div>
-
             </div>
         </div>
     </div>
-
-
     <div class="container-fluid navbarColor">
         <div class="row  p-5 row-1140" style="min-height: 500px;padding-bottom:50px;">
             <div class="col-md-12" data-aos="fade-up" data-aos-delay="50" data-aos-duration="2600"
@@ -173,19 +154,19 @@
                 <h2 class="title" style="color: #b39773 !important;margin-left: 410px !important;">Nos Biens</h2>
                 <div class="nos-biens">
                     <div class="row">
-                        <div class="col-md-4" onclick="document.location.href='appartement.php'">
+                        <div class="col-md-4" onclick="document.location.href='{{ url('/appartement-a-vendre') }}'">
                             <img src="{{ asset('assests/img/nos-biens-img-1.png') }}" style="width: 100%;" />
                             <h3> Appartements </h3>
                         </div>
-                        <div class="col-md-4" onclick="document.location.href='villas.php'">
+                        <div class="col-md-4"
+                            onclick="document.location.href='{{ url('/location-vente-villa-maroc') }}'">
                             <img src="{{ asset('assests/img/nos-biens-img-2.png') }}" style="width: 100%;" />
                             <h3> Villas </h3>
                         </div>
-                        <div class="col-md-4" onclick="document.location.href='terrains.php'">
+                        <div class="col-md-4" onclick="document.location.href='{{ url('/terrain-a-vendre-au-maroc') }}'">
                             <img src="{{ asset('assests/img/nos-biens-img-3.png') }}" style="width: 100%;" />
                             <h3> Terrains </h3>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -205,23 +186,6 @@
                     <p>
                 </div>
             </div>
-
         </div>
     </div>
-
-
-
-    {{-- <script>
-        function show() {
-
-            document.location.href = "actualites.php";
-        };
-    </script>
-
-    <script>
-        function art() {
-            onMouseOut = "this.style.textDecoration='underline';"
-            document.location.href = "actualites.php";
-        };
-    </script> --}}
 @endsection
