@@ -1,10 +1,6 @@
 @extends('master')
 
-@section('stylesheets')
-    <style>
 
-    </style>
-@endsection
 @section('content')
     <div class="container-fluid bg-qsn-color">
         <div class="row p-5" style="min-height: 500px;padding-bottom:100px;">

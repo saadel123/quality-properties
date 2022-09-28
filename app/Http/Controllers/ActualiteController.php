@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Actualite;
 use Illuminate\Http\Request;
-use TCG\Voyager\Models\Post;
 
-class BienController extends Controller
+class ActualiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,35 +14,9 @@ class BienController extends Controller
      */
     public function index()
     {
+        $actualites = Actualite::all();
+        return view('main.actualites')->with('actualites', $actualites);
     }
-    public function appartement()
-    {
-        $appartements = Post::whereCategoryId(1)->get();
-        return view('bein.appartements')->with('appartements', $appartements);
-    }
-    public function villa()
-    {
-        $villas = Post::whereCategoryId(2)->get();
-        return view('bein.villas')->with('villas', $villas);
-    }
-    public function terrain()
-    {
-        $terrains = Post::whereCategoryId(3)->get();
-        return view('bein.terrains')->with('terrains', $terrains);
-    }
-    public function rechercheVilla()
-    {
-        $type = request()->query('type');
-        $mots = request()->query('mots');
-        $villas = Post::when($mots, function ($query, $search) {
-            return $query->where('title', 'like', "%{$search}%");
-        })->when($type, function ($query, $type) {
-            return $query->where('type', '=', "{$type}");
-        })->get();
-
-        return view('bein.villas')->with('villas', $villas);
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -71,10 +45,9 @@ class BienController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $data = Post::whereSlug($slug)->first();
-        return view('bein.details-bein')->with('data', $data);
+        //
     }
 
     /**

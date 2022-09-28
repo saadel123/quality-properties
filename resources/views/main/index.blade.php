@@ -10,12 +10,10 @@
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <!--
-                                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                              <li data-target="#myCarousel" data-slide-to="1"></li>
-                                              <li data-target="#myCarousel" data-slide-to="2"></li>                 -->
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
@@ -30,30 +28,30 @@
                                 </div>
                             </div>
                         </div>
-                        <!--
-                                              <div class="item">
-                                                <img src="img/slide-2.jpg" alt="Chicago" style="width:100%;">
-                                                <div class="carousel-caption">
-                                                    <div class="slide-text"><span style="">À vendre</span><a href="villas.php" style="">voir plus <i class="fa fa-angle-right"></i></a>
-                                                        </div>
-                                                        <div class="slide-text-2">
-                                                            <span class="title">VILLAS DE LUXE</span>
-                                                            <span class="detail"> Casablanca  <i class="fa fa-map-marker"></i> </span>
-                                                     </div>
-                                              </div>
-                                              </div>
-                                              <div class="item">
-                                                <img src="img/slide-3.jpg" alt="Chicago" style="width:100%;">
-                                                <div class="carousel-caption">
-                                                    <div class="slide-text"><span style="">À vendre</span><a href="villa    s.php" style="">voir plus <i class="fa fa-angle-right"></i></a>
-                                                        </div>
-                                                        <div class="slide-text-2">
-                                                            <span class="title">VILLAS DE LUXE</span>
-                                                            <span class="detail"> Casablanca  <i class="fa fa-map-marker"></i> </span>
-                                                    </div>
-                                                </div>
-                                              </div>
-                                              -->
+                        <div class="item">
+                            <img class="" src="{{ asset('assests/img/slide-1.jpg') }}" style="width:100%;">
+                            <div class="carousel-caption">
+                                <div class="slide-text"><span style="">À vendre</span><a href="villas.php"
+                                        style="">voir plus <i class="fa fa-angle-right"></i></a>
+                                </div>
+                                <div class="slide-text-2">
+                                    <span class="title">VILLAS DE LUXE</span>
+                                    <span class="detail"> Casablanca <i class="fa fa-map-marker"></i> </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="" src="{{ asset('assests/img/slide-1.jpg') }}" style="width:100%;">
+                            <div class="carousel-caption">
+                                <div class="slide-text"><span style="">À vendre</span><a href="villa    s.php"
+                                        style="">voir plus <i class="fa fa-angle-right"></i></a>
+                                </div>
+                                <div class="slide-text-2">
+                                    <span class="title">VILLAS DE LUXE</span>
+                                    <span class="detail"> Casablanca <i class="fa fa-map-marker"></i> </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

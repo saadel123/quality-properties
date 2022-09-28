@@ -13,7 +13,7 @@
                 <div class="nos-biens-posts text-left">
                     <div class="row">
                         @foreach ($terrains as $terrain)
-                            <div class="col-md-4" onclick="document.location.href = '{{ url('/bein/' . $terrains->slug) }}'">
+                            <div class="col-md-4" onclick="document.location.href = '{{ url('/bein/' . $terrain->slug) }}'">
                                 @if ($terrain->vendu == 1)
                                     <div class="vendu">VENDU</div>
                                 @endif
