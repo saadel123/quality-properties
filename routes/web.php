@@ -39,7 +39,7 @@ Route::controller(BienController::class)->group(function () {
     Route::get('/bein/{slug}', 'show');
 });
 //Actualite
-Route::get('/actualites', [ActualiteController::class, 'index']);
+Route::get('/actualite-immobilier-maroc', [ActualiteController::class, 'index']);
 
 
 
