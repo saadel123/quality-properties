@@ -1,5 +1,6 @@
 @extends('master')
-
+@section('title', 'Quality Properties - Contact')
+@section('description', 'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la vente ou à la location, des biens dont la qualité de construction')
 
 @section('content')
     <div class="container-fluid bg-qsn-color">

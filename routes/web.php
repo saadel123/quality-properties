@@ -40,6 +40,9 @@ Route::controller(BienController::class)->group(function () {
 });
 //Actualite
 Route::get('/actualite-immobilier-maroc', [ActualiteController::class, 'index']);
+Route::get('/blog/{slug}', [ActualiteController::class, 'show']);
+
+
 
 
 

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Actualite;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\JsonLdMulti;
+use Illuminate\Support\Str;
+use TCG\Voyager\Facades\Voyager;
 
 class ActualiteController extends Controller
 {
@@ -14,8 +19,8 @@ class ActualiteController extends Controller
      */
     public function index()
     {
-        $actualites = Actualite::latest()->get();
-        return view('main.actualites')->with('actualites', $actualites);
+        $actualites = Actualite::latest()->paginate(6);
+        return view('actualites.actualites')->with('actualites', $actualites);
     }
 
     /**
@@ -45,9 +50,34 @@ class ActualiteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $actualite = Actualite::whereSlug($slug)->first();
+
+        SEOMeta::setTitle(Str::limit($actualite->seo_title, 60, ''));
+        SEOMeta::setDescription(Str::limit($actualite->meta_description, 150, '...'));
+        SEOMeta::addMeta('article:published_time', $actualite->created_at->toW3CString(), 'property');
+        SEOMeta::addMeta('article:section', 'news');
+        SEOMeta::addKeyword([$actualite->meta_keywords]);
+
+        OpenGraph::setTitle(Str::limit($actualite->titre, 60, ''))
+            ->setDescription(Str::limit($actualite->meta_description, 150, '...'))
+            ->setUrl('http://www.quality-properties.ma')
+            ->setType('articles')
+            ->setArticle([
+                'published_time' => $actualite->created_at,
+                'modified_time' => $actualite->updated_at,
+                // 'author' => isset($posts->user->name) ? $posts->user->name : '',
+            ]);
+        OpenGraph::addImage($actualite->slug);
+        OpenGraph::addImage(['url' => Voyager::image($actualite->image), 'size' => 300]);
+        OpenGraph::addImage(Voyager::image($actualite->image), ['height' => 300, 'width' => 300]);
+
+        JsonLdMulti::setTitle(Str::limit($actualite->titre, 60, ''));
+        JsonLdMulti::setDescription(Str::limit($actualite->meta_description, 150, '...'));
+        JsonLdMulti::setType('Article');
+
+        return view('actualites.details-actualite')->with('actualite', $actualite);
     }
 
     /**

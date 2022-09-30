@@ -1,4 +1,6 @@
 @extends('master')
+@section('title', 'Quality Properties - Nous Services')
+@section('description', 'Conception architecturale, design d\'intérieur, paysagisme. Home staging. Analyse de l\'environnement des biens. Calculs de rentabilité des investissements.')
 
 @section('content')
     <div class="container-fluid bg-qsn-color">

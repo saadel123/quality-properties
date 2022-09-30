@@ -1,5 +1,7 @@
 @extends('master')
-
+@section('title', 'Quality Properties - Immobilier résidentiel de luxe ')
+@section('description', 'Agence immobilière Casablanca - Villa a vendre - Casa Anfa - Villa Casa Anfa - Villa de luxe
+    Casablanca - Villa Casablanca')
 @section('content')
     <div class="container-fluid">
         <div class="row slide-part">

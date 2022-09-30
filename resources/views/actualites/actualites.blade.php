@@ -12,10 +12,23 @@
             }
         }
 
+        .pagination>.active>a,
+        .pagination>.active>a:focus,
+        .pagination>.active>a:hover,
+        .pagination>.active>span,
+        .pagination>.active>span:focus,
+        .pagination>.active>span:hover {
+            z-index: 3;
+            color: #fff;
+            cursor: default;
+            background-color: #b28a56;
+            border-color: #b28a56;
+        }
+
         @media only screen and (min-width: 490.40px) {
             .pagination {
                 margin-left: -80px;
-                margin-top: 88px;
+                margin-top: 40px;
             }
         }
     </style>
@@ -32,7 +45,8 @@
                                 <div class="row" id="rowart" style="padding-bottom:35px;">
                                     <div class="divider"></div>
                                     <div class="col-md-2">
-                                        <a href="{{ url('/blog/' . $actualite->slug) }}"><img src="{{ Voyager::image($actualite->image) }}" class="img-posts-act" /></a>
+                                        <a href="{{ url('/blog/' . $actualite->slug) }}"><img
+                                                src="{{ Voyager::image($actualite->image) }}" class="img-posts-act" /></a>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="post-detail-act">
@@ -50,13 +64,12 @@
                                 </div>
                             </div>
                         @endforeach
-                        <!--modal-->
                         <nav aria-label="Page navigation example" style="margin-left:440px;">
                             <ul class="pagination">
-                                <li><a href="actualites.php">Précédent</a></li>
-                                <li><a class="active" href="actualites.php ">1</a>
+                                <li>{{ $actualites->withQueryString()->links() }}</a>
+                                    {{-- <li><a href="actualites.php">Précédent</a></li>
                                 <li><a href="actualites.php?page=">2</a></li>
-                                <li><a href="actualites.php?page=">Suivant</a></li>
+                                <li><a href="actualites.php?page=">Suivant</a></li> --}}
                             </ul>
                         </nav>
                     </div>

@@ -46,7 +46,7 @@
                     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-3" aria-expanded="false"
                         style="height: 1px;">
                         <ul class="nav navbar-nav menu">
-                            <li><a href="./">Accueil</a></li>
+                            <li><a href="/">Accueil</a></li>
                             <li><a href="{{ url('/immobilier-luxe-maroc') }}">Qui sommes-nous</a></li>
                             <li><a href="{{ url('/achat-vente-location-immobilier-luxe') }}">Nos services</a></li>
                             <li><a href="#">Nos Biens </a>
