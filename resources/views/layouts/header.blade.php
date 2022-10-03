@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
-                    <a href="./"><img src="{{ asset('assests/img/logo.png') }}" alt=""
+                    <a href="/"><img src="{{ asset('assests/img/logo.png') }}" alt=""
                             style="max-width:300px;" /></a>
                 </div>
                 <div class="col-md-4 top-bar text-center pull-right" style="padding-top: 35px;">

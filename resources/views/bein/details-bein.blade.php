@@ -14,7 +14,8 @@
                                 @foreach (json_decode($data->images, true) as $image)
                                     <div class="mySlides">
                                         <!-- <div class="numbertext">1 / 6</div>-->
-                                        <img src="{{ Voyager::image($image) }}" style="width:100%;">
+                                        <img src="{{ Voyager::image($image) }}" alt="{{ $data->title }}"
+                                            style="width:100%;">
                                     </div>
                                 @endforeach
                                 <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -26,7 +27,7 @@
                                     @foreach (json_decode($data->images, true) as $key => $image)
                                         <div class="col-md-2 col-xs-6" style="margin-top:10px;">
                                             <img class="demo cursor" src="{{ Voyager::image($image) }}"
-                                                style="width:100%;height:auto;" onclick="currentSlide({{ $key }})"
+                                                style="width:100%;height:auto;" onclick="currentSlide({{ $key + 1 }})"
                                                 alt="Villas" />
                                         </div>
                                     @endforeach
@@ -88,6 +89,7 @@
             }
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
+            //captionText.innerHTML = dots[slideIndex-1].alt;
         }
     </script>
 @endsection

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\BienController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 
@@ -18,18 +20,9 @@ use TCG\Voyager\Facades\Voyager;
 
 
 
-Route::get('/', function () {
-    return view('main.index');
-});
-Route::get('/immobilier-luxe-maroc', function () {
-    return view('main.immobilier-luxe-maroc');
-});
-Route::get('/achat-vente-location-immobilier-luxe', function () {
-    return view('main.nous-services');
-});
-Route::get('/contact', function () {
-    return view('main.contact');
-});
+Route::get('/', [Controller::class, 'index']);
+Route::resource('contact', ContactController::class);
+
 //Bien
 Route::controller(BienController::class)->group(function () {
     Route::get('/appartement-a-vendre', 'appartement');
@@ -42,9 +35,12 @@ Route::controller(BienController::class)->group(function () {
 Route::get('/actualite-immobilier-maroc', [ActualiteController::class, 'index']);
 Route::get('/blog/{slug}', [ActualiteController::class, 'show']);
 
-
-
-
+Route::get('/immobilier-luxe-maroc', function () {
+    return view('main.immobilier-luxe-maroc');
+});
+Route::get('/achat-vente-location-immobilier-luxe', function () {
+    return view('main.nous-services');
+});
 
 
 Route::group(['prefix' => 'admin'], function () {

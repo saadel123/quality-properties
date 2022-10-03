@@ -1,4 +1,8 @@
 @extends('master')
+@section('title', 'Quality Properties - Actualités')
+@section('description', 'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la
+    vente ou à la location, des biens dont la qualité de construction')
+
 @section('stylesheet')
     <style>
         h3:hover {
@@ -46,7 +50,8 @@
                                     <div class="divider"></div>
                                     <div class="col-md-2">
                                         <a href="{{ url('/blog/' . $actualite->slug) }}"><img
-                                                src="{{ Voyager::image($actualite->image) }}" class="img-posts-act" /></a>
+                                                src="{{ Voyager::image($actualite->image) }}" alt="{{ $actualite->titre }}"
+                                                class="img-posts-act" /></a>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="post-detail-act">

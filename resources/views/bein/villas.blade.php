@@ -1,4 +1,7 @@
 @extends('master')
+@section('title', 'Quality Properties - Villas')
+@section('description', 'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la
+    vente ou à la location, des biens dont la qualité de construction')
 
 @section('stylesheet')
     <style>
@@ -70,7 +73,7 @@
                                 @endif
                                 @foreach (json_decode($villa->images, true) as $image)
                                     @if ($loop->first)
-                                        <img src="{{ Voyager::image($image) }}" class="img-posts" />
+                                        <img src="{{ Voyager::image($image) }}" alt="{{ $villa->title }}" class="img-posts" />
                                     @endif
                                 @endforeach
                                 <div class="post-detail">
@@ -88,3 +91,4 @@
         </div>
     </div>
 @endsection
+

@@ -1,6 +1,7 @@
 @extends('master')
 @section('title', 'Quality Properties - Immobilier résidentiel de luxe ')
-@section('description', 'Agence immobilière Casablanca - Villa a vendre - Casa Anfa - Villa Casa Anfa - Villa de luxe
+@section('description',
+    'Agence immobilière Casablanca - Villa a vendre - Casa Anfa - Villa Casa Anfa - Villa de luxe
     Casablanca - Villa Casablanca')
 @section('content')
     <div class="container-fluid">
@@ -21,20 +22,9 @@
                         <div class="item active">
                             <img class="" src="{{ asset('assests/img/slide-1.jpg') }}" style="width:100%;">
                             <div class="carousel-caption">
-                                <div class="slide-text"><span style="">À vendre</span><a href="villas.php"
-                                        style="">voir plus <i class="fa fa-angle-right"></i></a>
-                                </div>
-                                <div class="slide-text-2">
-                                    <span class="title">VILLAS DE LUXE</span>
-                                    <!--<span class="detail"> Casablanca  <i class="fa fa-map-marker"></i> </span>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="" src="{{ asset('assests/img/slide-1.jpg') }}" style="width:100%;">
-                            <div class="carousel-caption">
-                                <div class="slide-text"><span style="">À vendre</span><a href="villas.php"
-                                        style="">voir plus <i class="fa fa-angle-right"></i></a>
+                                <div class="slide-text"><span style="">À vendre</span><a
+                                        href="{{ url('/location-vente-villa-maroc') }}" style="">voir plus <i
+                                            class="fa fa-angle-right"></i></a>
                                 </div>
                                 <div class="slide-text-2">
                                     <span class="title">VILLAS DE LUXE</span>
@@ -43,10 +33,24 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img class="" src="{{ asset('assests/img/slide-1.jpg') }}" style="width:100%;">
+                            <img class="" src="{{ asset('assests/img/slide-2.jpg') }}" style="width:100%;">
                             <div class="carousel-caption">
-                                <div class="slide-text"><span style="">À vendre</span><a href="villa    s.php"
-                                        style="">voir plus <i class="fa fa-angle-right"></i></a>
+                                <div class="slide-text"><span style="">À vendre</span><a
+                                        href="{{ url('/location-vente-villa-maroc') }}" style="">voir plus <i
+                                            class="fa fa-angle-right"></i></a>
+                                </div>
+                                <div class="slide-text-2">
+                                    <span class="title">VILLAS DE LUXE</span>
+                                    <span class="detail"> Casablanca <i class="fa fa-map-marker"></i> </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="" src="{{ asset('assests/img/slide-3.jpg') }}" style="width:100%;">
+                            <div class="carousel-caption">
+                                <div class="slide-text"><span style="">À vendre</span><a
+                                        href="{{ url('/location-vente-villa-maroc') }}" style="">voir plus <i
+                                            class="fa fa-angle-right"></i></a>
                                 </div>
                                 <div class="slide-text-2">
                                     <span class="title">VILLAS DE LUXE</span>
@@ -180,12 +184,24 @@
                     Notre mission n'est pas seulement de procurer à nos clients des résidences de luxe mais de nous assurer
                     que la qualité de celles-ci répond à leurs expectatives dans tous les domaines qui leur importent.
                 </h3>
-                <div href="actualites.php" onclick="art();" id="arti" class="art"
+                <div href="actualites.php" onclick="document.location.href = '{{ url('/actualite-immobilier-maroc') }}'"
+                    id="arti" class="art"
                     style="font-size: 25px;cursor: pointer;color: #b39773;text-align: center;margin: 50px 0px;text-decoration:underline;">
                     <p>Blog
                     <p>
                 </div>
             </div>
+            @foreach ($actualites as $actualite)
+                <div class="col-md-6 actualite" data-aos="fade-up" data-aos-duration="2000"
+                    style="text-decoration:none !important">
+                    <div class="actualite-home"
+                        onclick="document.location.href = '{{ url('/blog/' . $actualite->slug) }}'">
+                        <h3 style="color:#b39773;">{{ $actualite->titre }}</h3>
+                    </div><br /><br />
+                    <h5 style="color:white;line-height: 21px;">{{ $actualite->desca }}<h5>
+                </div>
+            @endforeach
         </div>
     </div>
+
 @endsection

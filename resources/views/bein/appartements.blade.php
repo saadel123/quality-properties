@@ -1,4 +1,8 @@
 @extends('master')
+@section('title', 'Quality Properties - Appartements')
+@section('description', 'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la
+    vente ou à la location, des biens dont la qualité de construction')
+
 
 @section('stylesheets')
     <style>
@@ -13,13 +17,15 @@
                 <div class="nos-biens-posts text-left">
                     <div class="row">
                         @foreach ($appartements as $appartement)
-                            <div class="col-md-4" onclick="document.location.href = '{{ url('/bein/' . $appartement->slug) }}'">
+                            <div class="col-md-4"
+                                onclick="document.location.href = '{{ url('/bein/' . $appartement->slug) }}'">
                                 @if ($appartement->vendu == 1)
                                     <div class="vendu">VENDU</div>
                                 @endif
                                 @foreach (json_decode($appartement->images, true) as $image)
                                     @if ($loop->first)
-                                        <img src="{{ Voyager::image($image) }}" class="img-posts" />
+                                        <img src="{{ Voyager::image($image) }}" alt="{{ $appartement->title }}"
+                                            class="img-posts" />
                                     @endif
                                 @endforeach
                                 <div class="post-detail">

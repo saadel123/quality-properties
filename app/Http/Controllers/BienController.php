@@ -83,13 +83,13 @@ class BienController extends Controller
         SEOMeta::setTitle(Str::limit($data->seo_title, 60, ''));
         SEOMeta::setDescription(Str::limit($data->meta_description, 150, '...'));
         SEOMeta::addMeta('article:published_time', $data->created_at->toW3CString(), 'property');
-        SEOMeta::addMeta('article:section', 'news');
+        SEOMeta::addMeta('article:section', 'annonce');
         SEOMeta::addKeyword([$data->meta_keywords]);
 
         OpenGraph::setTitle(Str::limit($data->titre, 60, ''))
             ->setDescription(Str::limit($data->meta_description, 150, '...'))
             ->setUrl('http://www.quality-properties.ma')
-            ->setType('Annonce')
+            ->setType('Bein')
             ->setArticle([
                 'published_time' => $data->created_at,
                 'modified_time' => $data->updated_at,
