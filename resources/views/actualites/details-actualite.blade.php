@@ -19,9 +19,10 @@
                                     {!! $actualite->description !!}
                                 </div>
                                 <div onclick="img()" style="margin-top:43px;cursor: pointer;"> <img
-                                        src="/admin/upload/02/fleche.png" alt="" /> </div>
+                                        src="{{ asset('assests/img/fleche.png') }}" alt="" /> </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

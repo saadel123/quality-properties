@@ -28,6 +28,7 @@ Route::controller(BienController::class)->group(function () {
     Route::get('/appartement-a-vendre', 'appartement');
     Route::get('/location-vente-villa-maroc', 'villa');
     Route::get('/recherche-villa', 'rechercheVilla');
+    Route::get('/recherche-appartement', 'rechercheAppartement');
     Route::get('/terrain-a-vendre-au-maroc', 'terrain');
     Route::get('/bein/{slug}', 'show');
 });

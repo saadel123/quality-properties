@@ -23,11 +23,11 @@
                             <img class="" src="{{ asset('assests/img/slide-1.jpg') }}" style="width:100%;">
                             <div class="carousel-caption">
                                 <div class="slide-text"><span style="">À vendre</span><a
-                                        href="{{ url('/location-vente-villa-maroc') }}" style="">voir plus <i
+                                        href="{{ url('/bein/vente-villa-de-luxe-casablanca') }}" style="">voir plus <i
                                             class="fa fa-angle-right"></i></a>
                                 </div>
                                 <div class="slide-text-2">
-                                    <span class="title">VILLAS DE LUXE</span>
+                                    <span class="title">Villa à vendre</span>
                                     <span class="detail"> Casablanca <i class="fa fa-map-marker"></i> </span>
                                 </div>
                             </div>
@@ -36,11 +36,11 @@
                             <img class="" src="{{ asset('assests/img/slide-2.jpg') }}" style="width:100%;">
                             <div class="carousel-caption">
                                 <div class="slide-text"><span style="">À vendre</span><a
-                                        href="{{ url('/location-vente-villa-maroc') }}" style="">voir plus <i
+                                        href="{{ url('/bein/villa-de-luxe-casablanca-maroc-88') }}" style="">voir plus <i
                                             class="fa fa-angle-right"></i></a>
                                 </div>
                                 <div class="slide-text-2">
-                                    <span class="title">VILLAS DE LUXE</span>
+                                    <span class="title">Villa d'architecte pieds dans l'eau</span>
                                     <span class="detail"> Casablanca <i class="fa fa-map-marker"></i> </span>
                                 </div>
                             </div>
@@ -48,12 +48,12 @@
                         <div class="item">
                             <img class="" src="{{ asset('assests/img/slide-3.jpg') }}" style="width:100%;">
                             <div class="carousel-caption">
-                                <div class="slide-text"><span style="">À vendre</span><a
-                                        href="{{ url('/location-vente-villa-maroc') }}" style="">voir plus <i
+                                <div class="slide-text"><span style="">À louer</span><a
+                                        href="{{ url('/bein/villa-de-luxe-casablanca-immobilier-8') }}" style="">voir plus <i
                                             class="fa fa-angle-right"></i></a>
                                 </div>
                                 <div class="slide-text-2">
-                                    <span class="title">VILLAS DE LUXE</span>
+                                    <span class="title">Villa à louer</span>
                                     <span class="detail"> Casablanca <i class="fa fa-map-marker"></i> </span>
                                 </div>
                             </div>
@@ -84,8 +84,8 @@
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos
                                         Biens </a>
                                     <ul class="dropdown-menu sous-menu">
-                                        <li><a href="{{ url('/appartement-a-vendre') }}">Appartements</a></li>
                                         <li><a href="{{ url('/location-vente-villa-maroc') }}">Villas</a></li>
+                                        <li><a href="{{ url('/appartement-a-vendre') }}">Appartements</a></li>
                                         <li><a href="{{ url('/terrain-a-vendre-au-maroc') }}">Terrains</a></li>
                                     </ul>
                                 </li>
@@ -158,19 +158,24 @@
                 <h2 class="title" style="color: #b39773 !important;margin-left: 410px !important;">Nos Biens</h2>
                 <div class="nos-biens">
                     <div class="row">
-                        <div class="col-md-4" onclick="document.location.href='{{ url('/appartement-a-vendre') }}'">
-                            <img src="{{ asset('assests/img/nos-biens-img-1.png') }}" style="width: 100%;" />
-                            <h3> Appartements </h3>
-                        </div>
-                        <div class="col-md-4"
-                            onclick="document.location.href='{{ url('/location-vente-villa-maroc') }}'">
-                            <img src="{{ asset('assests/img/nos-biens-img-2.png') }}" style="width: 100%;" />
-                            <h3> Villas </h3>
-                        </div>
-                        <div class="col-md-4" onclick="document.location.href='{{ url('/terrain-a-vendre-au-maroc') }}'">
-                            <img src="{{ asset('assests/img/nos-biens-img-3.png') }}" style="width: 100%;" />
-                            <h3> Terrains </h3>
-                        </div>
+                        <a href="{{ url('/location-vente-villa-maroc') }}">
+                            <div class="col-md-4">
+                                <img src="{{ asset('assests/img/nos-biens-img-2.png') }}" style="width: 100%;" />
+                                <h3> Villas </h3>
+                            </div>
+                        </a>
+                        <a href="{{ url('/appartement-a-vendre') }}">
+                            <div class="col-md-4">
+                                <img src="{{ asset('assests/img/nos-biens-img-1.png') }}" style="width: 100%;" />
+                                <h3> Appartements </h3>
+                            </div>
+                        </a>
+                        <a href="{{ url('/terrain-a-vendre-au-maroc') }}">
+                            <div class="col-md-4">
+                                <img src="{{ asset('assests/img/nos-biens-img-3.png') }}" style="width: 100%;" />
+                                <h3> Terrains </h3>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 @extends('master')
 @section('title', 'Quality Properties - Qui sommes-nous')
-@section('description', 'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la vente ou à la location, des biens dont la qualité de construction')
+@section('description', 'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la
+    vente ou à la location, des biens dont la qualité de construction')
 @section('content')
     <div class="container-fluid bg-qsn-color">
         <div class="row  p-5 row-1140" style="min-height: 500px;padding-bottom:40px;">
@@ -41,8 +42,8 @@
 
                     <p>Après expertise de valeur vénale et/ou locative, nos experts mettent en évidence les aspects positifs
                         de la propriété que vous désirez acquérir, louer ou vendre, en matière de qualité de construction,
-                        de finition, d'originalité, de charme.</p>
-                    <p>Pour nous, chaque bien présente une personnalité qui lui est propre et qu'il s'agit de révéler. La
+                        de finition, d'originalité, de charme. <br>
+                        Pour nous, chaque bien présente une personnalité qui lui est propre et qu'il s'agit de révéler. La
                         localisation autant que les qualités intrinsèques du bien, sont prises en considération afin
                         d'atteindre un prix ou un loyer objectif par rapport à des biens comparables et par rapport à la
                         rentabilité du segment de marché dans lequel se place votre bien. Nos experts et conseillers se
@@ -53,17 +54,23 @@
         <div class="row  p-5 row-1140" style="min-height: 500px;padding-bottom:100px;">
             <div class="col-md-12 qsn-detail">
                 <h2 class="text-b" style="">DE LA STRATEGIE A L'ACTION AU SERVICE DU CLIENT</h2><br />
-                <p><img src="{{ asset('assests/img/icon-p.png') }}" class="img-p-qsn" />Une expérience de 30 ans dans l'immobilier de luxe, en
+                <p><img src="{{ asset('assests/img/icon-p.png') }}" class="img-p-qsn" />Une expérience de 30 ans dans
+                    l'immobilier de luxe, en
                     Europe et au Maroc</p><br />
                 <p><img src="{{ asset('assests/img/icon-p.png') }}" />Une collaboration étroite avec les clients</p><br />
-                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Des experts techniques et financiers qualifiés en matière d'études de
+                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Des experts techniques et financiers qualifiés en
+                    matière d'études de
                     valorisation</p><br />
-                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Une collaboration permanente avec un cabinet d'architectes opérant
+                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Une collaboration permanente avec un cabinet
+                    d'architectes opérant
                     simultanément en Europe et au Maroc</p><br />
-                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Des ingénieurs et spécialistes de la construction</p><br />
-                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Des conseillers immobiliers professionnels et attentifs aux moindres détails
+                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Des ingénieurs et spécialistes de la construction</p>
+                <br />
+                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Des conseillers immobiliers professionnels et
+                    attentifs aux moindres détails
                 </p><br />
-                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Des économistes pour calculer la rentabilité de votre investissement sur les
+                <p><img src="{{ asset('assests/img/icon-p.png') }}" />Des économistes pour calculer la rentabilité de votre
+                    investissement sur les
                     court et long termes</p>
             </div>
         </div>

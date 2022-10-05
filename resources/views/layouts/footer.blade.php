@@ -5,7 +5,8 @@
             <img src="{{ asset('assests/img/logo--footer.png') }}" style="max-width: 240px;margin-top: 90px;" />
             <p style="color:white;font-size:16px;margin-top:40px;">
                 <img src="{{ asset('assests/img/tel-white.png') }}" style="width:30px;" />
-                <span style=" vertical-align: middle;"> +212 (0) 661 326 353 / +212 (0) 668 199 773</span>
+                <span style=" vertical-align: middle;"> +212 (0) 661 326 353 </span>
+                {{-- / +212 (0) 668 199 773 --}}
             <p>
             <div style="margin-top: 30px;">
                 <a href="https://www.facebook.com/Immobillierdeluxe.Maroc">
@@ -20,7 +21,6 @@
         </div>
 
         <div class="col-md-6" style="color:white;">
-
             <div class="contactez-info">
                 <h4 style="max-width:360px;line-height: 30px;">Coordonnées<br>
                     Siège opérationnel : Promoffice Building, 4.4. La Colline-Mandarona, 20270 Sidi Maârouf –
@@ -51,7 +51,6 @@
 <script>
     $(document).ready(function() {
         $("#send").click(function() {
-
             if ($("#contactez-form").valid()) {
                 jQuery.ajax({
                     url: "send.php",

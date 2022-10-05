@@ -39,10 +39,28 @@ class BienController extends Controller
     {
         $type = request()->query('type');
         $mots = request()->query('mots');
+        $category = 2;
         $villas = Post::when($mots, function ($query, $search) {
             return $query->where('title', 'like', "%{$search}%");
         })->when($type, function ($query, $type) {
             return $query->where('type', '=', "{$type}");
+        })->when($category, function ($query, $category_id) {
+            return $query->where('category_id', '=', "{$category_id}");
+        })->get();
+
+        return view('bein.villas')->with('villas', $villas);
+    }
+    public function rechercheAppartement()
+    {
+        $type = request()->query('type');
+        $mots = request()->query('mots');
+        $category = 1;
+        $villas = Post::when($mots, function ($query, $search) {
+            return $query->where('title', 'like', "%{$search}%");
+        })->when($type, function ($query, $type) {
+            return $query->where('type', '=', "{$type}");
+        })->when($category, function ($query, $category_id) {
+            return $query->where('category_id', '=', "{$category_id}");
         })->get();
 
         return view('bein.villas')->with('villas', $villas);

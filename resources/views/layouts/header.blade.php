@@ -51,8 +51,8 @@
                             <li><a href="{{ url('/achat-vente-location-immobilier-luxe') }}">Nos services</a></li>
                             <li><a href="#">Nos Biens </a>
                                 <ul class="sous-menu">
-                                    <li><a href="{{ url('/appartement-a-vendre') }}">Appartements</a></li>
                                     <li><a href="{{ url('/location-vente-villa-maroc') }}">Villas</a></li>
+                                    <li><a href="{{ url('/appartement-a-vendre') }}">Appartements</a></li>
                                     <li><a href="{{ url('/terrain-a-vendre-au-maroc') }}">Terrains</a></li>
                                 </ul>
                             </li>
