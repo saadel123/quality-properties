@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -37,7 +39,10 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
-        Contact::create($request->all());
+        $details = $request->all();
+        Mail::to('contact@quality-properties.ma')->send(new ContactMail($details));
+        Contact::create($details);
+
         return response()->json(['success' => 'Message envoyer.'], 201);
     }
 

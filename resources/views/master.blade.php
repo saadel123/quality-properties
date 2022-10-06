@@ -58,15 +58,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
         integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
         crossorigin="anonymous"></script>
-    {!! NoCaptcha::renderJs() !!}
+        {!! NoCaptcha::renderJs('fr', false, 'recaptchaCallback') !!}
     <script>
-        window.onload = function() {
-            var $recaptcha = document.querySelector('#g-recaptcha-response');
+        // window.onload = function() {
+        //     var $recaptcha = document.querySelector('#g-recaptcha-response');
 
-            if ($recaptcha) {
-                $recaptcha.setAttribute("required", "required");
-            }
-        };
+        //     if ($recaptcha) {
+        //         $recaptcha.setAttribute("required", "required");
+        //     }
+        // };
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -107,6 +107,11 @@
                 }
             });
         });
+    </script>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            alert("grecaptcha is ready!");
+        };
     </script>
     <script>
         window.dataLayer = window.dataLayer || [];
