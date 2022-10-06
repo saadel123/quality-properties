@@ -2,6 +2,16 @@ body {
     overflow-x: hidden;
 }
 
+#g-recaptcha-response {
+    display: block !important;
+    position: absolute;
+    margin: -78px 0 0 0 !important;
+    width: 302px !important;
+    height: 76px !important;
+    z-index: -999999;
+    opacity: 0;
+}
+
 .error {
     color: red;
 }
@@ -198,12 +208,12 @@ h3.border-text {
     max-width: 150px;
 }
 
-#contactez-form {
+.form-contact-footer {
     float: left;
     max-width: 350px;
 }
 
-#contactez-form textarea, #contactez-form input:not([type="submit"]) {
+.form-contact-footer textarea, .form-contact-footer input:not([type="submit"]) {
     background: transparent;
     border: 1px solid #b39773;
     margin: 5px 0px;
@@ -213,8 +223,8 @@ h3.border-text {
 }
 
 
-#contactez-form input[type="submit"] {
-    float: right;
+.form-contact-footer input[type="submit"] {
+    float: left;
     background: transparent;
     border: 1px solid #b39773;
     margin: 5px 0px;
@@ -222,7 +232,7 @@ h3.border-text {
     color: #b39773;
 }
 
-#page-contact {
+.form-contact {
     width: 100%;
 }
 
@@ -234,7 +244,7 @@ h3.border-text {
     background-color: #02173fb8;
 }
 
-#page-contact textarea, #page-contact input:not([type="submit"]) {
+.form-contact textarea, .form-contact input:not([type="submit"]) {
     background: transparent;
     margin: 5px 0px;
     width: 100%;
@@ -242,23 +252,23 @@ h3.border-text {
     color: white;
 }
 
-#page-contact textarea {
+.form-contact textarea {
     border: 1px solid #b39773;
     margin-top: 40px;
 }
 
-#page-contact input:not([type="submit"]) {
+.form-contact input:not([type="submit"]) {
     outline: 0px;
     border: 0px;
     border-bottom: 1px solid #b39773;
     margin-top: 10px;
 }
 
-#page-contact input:not([type="submit"])::placeholder, #page-contact textarea::placeholder {
+.form-contact input:not([type="submit"])::placeholder, .form-contact textarea::placeholder {
     color: white;
 }
 
-#page-contact input[type="submit"] {
+.form-contact input[type="submit"] {
     background: #c29e5e;
     border: 1px solid #b39773;
     margin-top: 25px;

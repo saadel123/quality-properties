@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '8bd387f25983a9d3a358f16c2b84838ae2ef2421',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'anhskohbo/no-captcha' => array(
+            'pretty_version' => '3.4.0',
+            'version' => '3.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../anhskohbo/no-captcha',
+            'aliases' => array(),
+            'reference' => 'e12233006da3063f5cf4ce959cae05a6676faedd',
+            'dev_requirement' => false,
+        ),
         'arrilot/laravel-widgets' => array(
             'pretty_version' => '3.13.1',
             'version' => '3.13.1.0',
@@ -437,12 +446,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '8bd387f25983a9d3a358f16c2b84838ae2ef2421',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(

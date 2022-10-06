@@ -188,6 +188,7 @@ class ComposerStaticInit104ca67b076613d219c1640475e06736
             'Artesaos\\SEOTools\\' => 18,
             'Arrilot\\Widgets\\' => 16,
             'App\\' => 4,
+            'Anhskohbo\\NoCaptcha\\' => 20,
         ),
     );
 
@@ -602,6 +603,10 @@ class ComposerStaticInit104ca67b076613d219c1640475e06736
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
         ),
+        'Anhskohbo\\NoCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/anhskohbo/no-captcha/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -615,11 +620,15 @@ class ComposerStaticInit104ca67b076613d219c1640475e06736
     );
 
     public static $classMap = array (
+        'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/Facades/NoCaptcha.php',
+        'Anhskohbo\\NoCaptcha\\NoCaptcha' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/NoCaptcha.php',
+        'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/NoCaptchaServiceProvider.php',
         'App\\Actualite' => __DIR__ . '/../..' . '/app/Actualite.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\ActualiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/ActualiteController.php',
         'App\\Http\\Controllers\\BienController' => __DIR__ . '/../..' . '/app/Http/Controllers/BienController.php',
+        'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

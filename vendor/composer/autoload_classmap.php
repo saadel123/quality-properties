@@ -6,11 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha' => $vendorDir . '/anhskohbo/no-captcha/src/Facades/NoCaptcha.php',
+    'Anhskohbo\\NoCaptcha\\NoCaptcha' => $vendorDir . '/anhskohbo/no-captcha/src/NoCaptcha.php',
+    'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider' => $vendorDir . '/anhskohbo/no-captcha/src/NoCaptchaServiceProvider.php',
     'App\\Actualite' => $baseDir . '/app/Actualite.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\ActualiteController' => $baseDir . '/app/Http/Controllers/ActualiteController.php',
     'App\\Http\\Controllers\\BienController' => $baseDir . '/app/Http/Controllers/BienController.php',
+    'App\\Http\\Controllers\\ContactController' => $baseDir . '/app/Http/Controllers/ContactController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

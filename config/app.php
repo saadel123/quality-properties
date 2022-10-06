@@ -182,6 +182,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -215,6 +216,7 @@ return [
         'Twitter'       => Artesaos\SEOTools\Facades\TwitterCard::class,
         'JsonLd'        => Artesaos\SEOTools\Facades\JsonLd::class,
         'JsonLdMulti'   => Artesaos\SEOTools\Facades\JsonLdMulti::class,
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

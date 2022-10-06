@@ -107,4 +107,5 @@ return array(
     'Artesaos\\SEOTools\\' => array($vendorDir . '/artesaos/seotools/src/SEOTools'),
     'Arrilot\\Widgets\\' => array($vendorDir . '/arrilot/laravel-widgets/src'),
     'App\\' => array($baseDir . '/app', $vendorDir . '/laravel/pint/app'),
+    'Anhskohbo\\NoCaptcha\\' => array($vendorDir . '/anhskohbo/no-captcha/src'),
 );

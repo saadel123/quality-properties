@@ -30,13 +30,19 @@
 
                 <h3 id='contactez-title'>Contactez-nous!</h3>
             </div>
-            <form action="#" method="post" class="form-contact" name="contactez-form" id="contactez-form"
-                onSubmit="return false;">
+            <form action="#" method="post" class="form-contact-footer" name="contactez-form" id="page-contact">
+
                 <input type="text" name="fullname" id="fullname" placeholder="Nom & Prénom" required />
                 <input type="email" name="email" id="email" placeholder="E-mail" required />
                 <input type="tel" name="phone" id="phone" placeholder="Tél" required />
                 <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
-                <input type="submit" name="send" value="Envoyer" id="send">
+                <div style="padding-bottom: 25px" class="row">
+                    <div class="col-md-2 ">
+                        {!! NoCaptcha::display() !!}
+                    </div>
+                </div>
+                <div style="width:100%;display:block;"> <input type="submit" value="Envoyer" id="send"
+                        style="" /></div>
             </form>
         </div>
 
@@ -48,44 +54,6 @@
 
 </html>
 
-<script>
-    $(document).ready(function() {
-        $("#send").click(function() {
-            if ($("#contactez-form").valid()) {
-                jQuery.ajax({
-                    url: "send.php",
-                    data: 'fullname=' + $("#fullname").val() + '&email=' +
-                        $("#email").val() + '&phone=' +
-                        $("#phone").val() + '&message=' +
-                        $("#message").val() + '&send=send',
-                    type: "POST",
-                    success: function(data) {
-                        swal({
-                            title: "Merci!",
-                            text: "Votre demande a été envoyée avec succès.",
-                            type: "success"
-                        }, function() {
-                            $('#exampleModal').modal('toggle');
-                            $("#fullname").val('');
-                            $("#email").val('');
-                            $("#phone").val('');
-                            $("#message").val('');
-                        });
-
-                    },
-                    error: function() {}
-                });
-            }
-
-        });
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
-    integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"
-    integrity="sha512-MqEDqB7me8klOYxXXQlB4LaNf9V9S0+sG1i8LtPOYmHqICuEZ9ZLbyV3qIfADg2UJcLyCm4fawNiFvnYbcBJ1w=="
-    crossorigin="anonymous"></script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

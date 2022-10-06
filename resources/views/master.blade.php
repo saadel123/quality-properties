@@ -55,7 +55,59 @@
         crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-70938442-3"></script>
     @yield('javascripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
+        integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
+        crossorigin="anonymous"></script>
+    {!! NoCaptcha::renderJs() !!}
+    <script>
+        window.onload = function() {
+            var $recaptcha = document.querySelector('#g-recaptcha-response');
 
+            if ($recaptcha) {
+                $recaptcha.setAttribute("required", "required");
+            }
+        };
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).ready(function() {
+            $("#send").click(function(e) {
+                e.preventDefault();
+                if ($("#page-contact").valid()) {
+                    var fullname = $("#fullname").val();
+                    var email = $("#email").val();
+                    var phone = $("#phone").val();
+                    var message = $("#message").val();
+                    jQuery.ajax({
+                        url: "{{ route('contact.store') }}",
+                        type: "POST",
+                        data: {
+                            fullname: fullname,
+                            email: email,
+                            phone: phone,
+                            message: message
+                        },
+                        success: function(data) {
+                            swal({
+                                title: "Merci!",
+                                text: "Votre message a bien été envoyé.",
+                                type: "success"
+                            }, function() {
+                                $('#exampleModal').modal('toggle');
+                                $("#fullname").val('');
+                                $("#email").val('');
+                                $("#phone").val('');
+                                $("#message").val('');
+                            });
+                        },
+                        error: function() {}
+                    });
+                }
+            });
+        });
+    </script>
     <script>
         window.dataLayer = window.dataLayer || [];
 

@@ -3,9 +3,10 @@
 @section('description',
     'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la
     vente ou à la location, des biens dont la qualité de construction')
+@section('stylesheet')
 
+@endsection
 @section('content')
-
     <div class="container-fluid bg-qsn-color">
         <div class="row p-5" style="min-height: 500px;padding-bottom:100px;">
             <div class="col-md-12">
@@ -16,6 +17,11 @@
                             <input type="email" name="email" id="email" placeholder="E-mail" required />
                             <input type="tel" name="phone" id="phone" placeholder="Tél" required />
                             <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-3 col-sm-offset-3">
+                                    {!! NoCaptcha::display() !!}
+                                </div>
+                            </div>
                             <div style="width:100%;display:block;"> <input type="submit" value="Envoyer" id="send"
                                     style="" /></div>
                         </form>
@@ -48,52 +54,5 @@
 @endsection
 
 @section('javascripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
-        integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"
-        integrity="sha512-MqEDqB7me8klOYxXXQlB4LaNf9V9S0+sG1i8LtPOYmHqICuEZ9ZLbyV3qIfADg2UJcLyCm4fawNiFvnYbcBJ1w=="
-        crossorigin="anonymous"></script>
-    <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $(document).ready(function() {
-            $("#send").click(function(e) {
-                e.preventDefault();
-                if ($("#page-contact").valid()) {
-                    var fullname = $("#fullname").val();
-                    var email = $("#email").val();
-                    var phone = $("#phone").val();
-                    var message = $("#message").val();
-                    jQuery.ajax({
-                        url: "{{ route('contact.store') }}",
-                        type: "POST",
-                        data: {
-                            fullname: fullname,
-                            email: email,
-                            phone: phone,
-                            message: message
-                        },
-                        success: function(data) {
-                            swal({
-                                title: "Merci!",
-                                text: "Votre message a bien été envoyé.",
-                                type: "success"
-                            }, function() {
-                                $('#exampleModal').modal('toggle');
-                                $("#fullname").val('');
-                                $("#email").val('');
-                                $("#phone").val('');
-                                $("#message").val('');
-                            });
-                        },
-                        error: function() {}
-                    });
-                }
-            });
-        });
-    </script>
+
 @endsection
