@@ -1,8 +1,8 @@
 @component('mail::message')
 Bonjour
 
-Vous avez un nouveau message de: <strong>{{ $details['fullname'] }}</strong> <br><br>
-Ci-dessous les informations de l'utilisateur: <br><br>
+Vous avez un nouveau message de: <strong>{{ $details['fullname'] }}</strong> <br>
+{{-- Ci-dessous les informations de l'utilisateur: <br><br> --}}
 <strong>Nom et Prenom:</strong> {{ $details['fullname'] }} <br>
 <strong>Email:</strong> {{ $details['email'] }} <br>
 @if(!empty($details['phone']))
@@ -12,5 +12,5 @@ Ci-dessous les informations de l'utilisateur: <br><br>
 <strong>Message:</strong> {{ $details['message'] }}</strong> <br><br>
 
 Cordialement,<br>
-L'équipes<span> </span>Quality properties.
+L'équipe<span> </span>Quality properties.
 @endcomponent

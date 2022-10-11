@@ -58,15 +58,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
         integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
         crossorigin="anonymous"></script>
-        {!! NoCaptcha::renderJs('fr', false, 'recaptchaCallback') !!}
+    {!! NoCaptcha::renderJs('fr', false, 'recaptchaCallback') !!}
     <script>
-        // window.onload = function() {
-        //     var $recaptcha = document.querySelector('#g-recaptcha-response');
+        window.onload = function() {
+            var $recaptcha = document.querySelector('#g-recaptcha-response');
 
-        //     if ($recaptcha) {
-        //         $recaptcha.setAttribute("required", "required");
-        //     }
-        // };
+            if ($recaptcha) {
+                $recaptcha.setAttribute("required", "required");
+            }
+        };
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -75,6 +75,7 @@
         $(document).ready(function() {
             $("#send").click(function(e) {
                 e.preventDefault();
+                $("#send").attr("disabled", true);
                 if ($("#page-contact").valid()) {
                     var fullname = $("#fullname").val();
                     var email = $("#email").val();
@@ -101,8 +102,13 @@
                                 $("#phone").val('');
                                 $("#message").val('');
                             });
+                            $("#send").attr("disabled", false);
                         },
-                        error: function() {}
+                        error: function() {
+                            $("#send").attr("disabled", false);
+
+                        }
+
                     });
                 }
             });
@@ -128,5 +134,6 @@
         AOS.init();
     </script> --}}
 </body>
+
 
 </html>

@@ -97,36 +97,39 @@ class BienController extends Controller
     public function show($slug)
     {
         $data = Post::whereSlug($slug)->first();
+        if ($data) {
+            SEOMeta::setTitle(Str::limit($data->seo_title, 60, ''));
+            SEOMeta::setDescription(Str::limit($data->meta_description, 150, '...'));
+            SEOMeta::addMeta('article:published_time', $data->created_at->toW3CString(), 'property');
+            SEOMeta::addMeta('article:section', 'annonce');
+            SEOMeta::addKeyword([$data->meta_keywords]);
 
-        SEOMeta::setTitle(Str::limit($data->seo_title, 60, ''));
-        SEOMeta::setDescription(Str::limit($data->meta_description, 150, '...'));
-        SEOMeta::addMeta('article:published_time', $data->created_at->toW3CString(), 'property');
-        SEOMeta::addMeta('article:section', 'annonce');
-        SEOMeta::addKeyword([$data->meta_keywords]);
-
-        OpenGraph::setTitle(Str::limit($data->titre, 60, ''))
-            ->setDescription(Str::limit($data->meta_description, 150, '...'))
-            ->setUrl('http://www.quality-properties.ma')
-            ->setType('Bein')
-            ->setArticle([
-                'published_time' => $data->created_at,
-                'modified_time' => $data->updated_at,
-                // 'author' => isset($posts->user->name) ? $posts->user->name : '',
-            ]);
-        OpenGraph::addImage($data->slug);
-        foreach (json_decode($data->images, true) as $index => $image) {
-            if ($index == 0) {
-                OpenGraph::addImage(['url' => Voyager::image($image), 'size' => 300]);
-                OpenGraph::addImage(Voyager::image($image), ['height' => 300, 'width' => 300]);
+            OpenGraph::setTitle(Str::limit($data->titre, 60, ''))
+                ->setDescription(Str::limit($data->meta_description, 150, '...'))
+                ->setUrl('http://www.quality-properties.ma')
+                ->setType('Bein')
+                ->setArticle([
+                    'published_time' => $data->created_at,
+                    'modified_time' => $data->updated_at,
+                    // 'author' => isset($posts->user->name) ? $posts->user->name : '',
+                ]);
+            OpenGraph::addImage($data->slug);
+            foreach (json_decode($data->images, true) as $index => $image) {
+                if ($index == 0) {
+                    OpenGraph::addImage(['url' => Voyager::image($image), 'size' => 300]);
+                    OpenGraph::addImage(Voyager::image($image), ['height' => 300, 'width' => 300]);
+                }
+                break;
             }
-            break;
+
+            JsonLdMulti::setTitle(Str::limit($data->titre, 60, ''));
+            JsonLdMulti::setDescription(Str::limit($data->meta_description, 150, '...'));
+            JsonLdMulti::setType('Annonce');
+
+            return view('bein.details-bein')->with('data', $data);
+        } else {
+            abort(404);
         }
-
-        JsonLdMulti::setTitle(Str::limit($data->titre, 60, ''));
-        JsonLdMulti::setDescription(Str::limit($data->meta_description, 150, '...'));
-        JsonLdMulti::setType('Annonce');
-
-        return view('bein.details-bein')->with('data', $data);
     }
 
     /**

@@ -19,20 +19,23 @@
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                        <div class="item active">
-                            <img class="" src="{{ asset('assests/img/slide-1.jpg') }}" style="width:100%;">
-                            <div class="carousel-caption">
-                                <div class="slide-text"><span style="">À vendre</span><a
-                                        href="{{ url('/bein/vente-villa-de-luxe-casablanca') }}" style="">voir plus <i
-                                            class="fa fa-angle-right"></i></a>
-                                </div>
-                                <div class="slide-text-2">
-                                    <span class="title">Villa à vendre</span>
-                                    <span class="detail"> Casablanca <i class="fa fa-map-marker"></i> </span>
+                        @foreach ($slides as $slide)
+                            <div class="item {{ $loop->first ? 'active' : '' }}">
+                                <img class="" src="{{ Voyager::image($slide->image) }}" style="width:100%;">
+                                <div class="carousel-caption">
+                                    <div class="slide-text"><span style="">{{ $slide->type }}</span><a
+                                            href="{{ $slide->lien }}" style="">voir
+                                            plus <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                    <div class="slide-text-2">
+                                        <span class="title">{{ $slide->titre }}</span>
+                                        <span class="detail"> {{ $slide->ville }} <i class="fa fa-map-marker"></i> </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
+                        @endforeach
+
+                        {{-- <div class="item">
                             <img class="" src="{{ asset('assests/img/slide-2.jpg') }}" style="width:100%;">
                             <div class="carousel-caption">
                                 <div class="slide-text"><span style="">À vendre</span><a
@@ -57,7 +60,7 @@
                                     <span class="detail"> Casablanca <i class="fa fa-map-marker"></i> </span>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -65,7 +68,7 @@
         <div class="row navbarColor">
             <div class="col-md-12">
                 <nav class="navbar " role="navigation">
-                    <div class="container-fluid">
+                    <div class="container-fluid" style="padding-left: 111px;">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                                 data-target="#bs-example-navbar-collapse-3" aria-expanded="false">
@@ -155,7 +158,7 @@
         <div class="row  p-5 row-1140" style="min-height: 500px;padding-bottom:50px;">
             <div class="col-md-12" data-aos="fade-up" data-aos-delay="50" data-aos-duration="2600"
                 style="margin-top: -64px;">
-                <h2 class="title" style="color: #b39773 !important;margin-left: 410px !important;">Nos Biens</h2>
+                <h2 class="title " style="color: #b39773 !important;text-align: center;">Nos Biens</h2>
                 <div class="nos-biens">
                     <div class="row">
                         <a href="{{ url('/location-vente-villa-maroc') }}">

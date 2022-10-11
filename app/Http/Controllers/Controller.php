@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Actualite;
+use App\Slide;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -14,6 +15,7 @@ class Controller extends BaseController
     public function index()
     {
         $actualites = Actualite::latest()->paginate(2);
-        return view('main.index')->with('actualites', $actualites);
+        $slides = Slide::orderby('order', 'ASC')->paginate(3);
+        return view('main.index', ['actualites' => $actualites, 'slides' => $slides]);
     }
 }
