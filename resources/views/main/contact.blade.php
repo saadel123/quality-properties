@@ -29,30 +29,31 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid" id="footer">
-        <div class="row  p-5" style="min-height: 500px;padding-top:60px;">
-            <div class="col-md-12 text-center">
-                <img src="{{ asset('assests/img/logo--footer.png') }}" style="max-width: 240px;margin-top: 30px;" />
-                <p style="color:white;font-size:16px;margin-top:40px;"><img src="{{ asset('assests/img/tel-white.png') }}"
-                        style="width:30px;" /><span style=" vertical-align: middle;"> +212 (0) 661 326 353</span>
-                <p>
-                <div style="margin-top: 30px;">
-                    <a href="https://www.facebook.com/Immobillierdeluxe.Maroc"><img
-                            src="{{ asset('assests/img/icon-facebook.png') }}" alt="" style="max-width: 36px;"></a>
-                    <a href="https://www.linkedin.com/company/quality-properties-maroc/"><img
-                            src="{{ asset('assests/img/icon-linkedin.png') }}" alt=""
-                            style="max-width: 36px;margin-left:4px;"></a>
-                    <a href="https://www.instagram.com/quality_properties1/?hl=fr"> <img
-                            src="{{ asset('assests/img/instagram_icon_12.png') }}" alt=""
-                            style="max-width: 36px;margin-left:4px;"></a>
+        <div class="container-fluid" id="footer">
+            <div class="row  p-5" style="min-height: 500px;padding-top:60px;">
+                <div class="col-md-12 text-center">
+                    <img src="{{ asset('assests/img/logo--footer.png') }}" style="max-width: 240px;margin-top: 30px;" />
+                    <p style="color:white;font-size:16px;margin-top:40px;"><img
+                            src="{{ asset('assests/img/tel-white.png') }}" style="width:30px;" /><span
+                            style=" vertical-align: middle;"> +212 (0) 661 326 353</span>
+                    <p>
+                    <div style="margin-top: 30px;">
+                        <a href="https://www.facebook.com/Immobillierdeluxe.Maroc"><img
+                                src="{{ asset('assests/img/icon-facebook.png') }}" alt=""
+                                style="max-width: 36px;"></a>
+                        <a href="https://www.linkedin.com/company/quality-properties-maroc/"><img
+                                src="{{ asset('assests/img/icon-linkedin.png') }}" alt=""
+                                style="max-width: 36px;margin-left:4px;"></a>
+                        <a href="https://www.instagram.com/quality_properties1/?hl=fr"> <img
+                                src="{{ asset('assests/img/instagram_icon_12.png') }}" alt=""
+                                style="max-width: 36px;margin-left:4px;"></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
 
-@section('javascripts')
+    @section('javascripts')
 
 
-@endsection
+    @endsection

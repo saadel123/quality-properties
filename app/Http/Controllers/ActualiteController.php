@@ -62,7 +62,7 @@ class ActualiteController extends Controller
 
             OpenGraph::setTitle(Str::limit($actualite->titre, 60, ''))
                 ->setDescription(Str::limit($actualite->meta_description, 150, '...'))
-                ->setUrl('http://www.quality-properties.ma')
+                ->setUrl(config('app.url'))
                 ->setType('articles')
                 ->setArticle([
                     'published_time' => $actualite->created_at,

@@ -41,7 +41,7 @@ class ContactController extends Controller
         //
         $details = $request->all();
         Mail::to('s.elghanemy@directinvest.ma')->send(new ContactMail($details));
-        // Mail::to('contact@quality-properties.ma')->send(new ContactMail($details));
+        // Mail::to('a.degreve@experteam.ma')->send(new ContactMail($details));
         Contact::create($details);
         return response()->json(['success' => 'Message envoyer.'], 201);
     }

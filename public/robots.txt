@@ -1,2 +1,3 @@
+Sitemap: https://www.quality-properties.ma/public/sitemap.xml
 User-agent: *
 Disallow:

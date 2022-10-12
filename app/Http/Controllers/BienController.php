@@ -106,7 +106,7 @@ class BienController extends Controller
 
             OpenGraph::setTitle(Str::limit($data->titre, 60, ''))
                 ->setDescription(Str::limit($data->meta_description, 150, '...'))
-                ->setUrl('http://www.quality-properties.ma')
+                ->setUrl(config('app.url'))
                 ->setType('Bein')
                 ->setArticle([
                     'published_time' => $data->created_at,
