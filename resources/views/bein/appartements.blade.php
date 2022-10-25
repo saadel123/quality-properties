@@ -12,6 +12,11 @@
                 margin-left: 70px !important;
             }
         }
+
+        .h3,
+        h3 {
+            font-size: 23px;
+        }
     </style>
 @endsection
 @section('content')

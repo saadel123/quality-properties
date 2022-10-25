@@ -26,8 +26,8 @@ class PostDimmer extends BaseDimmer
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-news',
-            'title'  => "{$count} {$string}",
-            'text'   => __('voyager::dimmer.post_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'title'  => "{$count} Biens", //{$string}
+            'text'   => __('voyager::dimmer.post_text', ['count' => $count, 'string' => 'biens' ]), //Str::lower($string)
             'button' => [
                 'text' => __('voyager::dimmer.post_link_text'),
                 'link' => route('voyager.posts.index'),

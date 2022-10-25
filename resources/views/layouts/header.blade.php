@@ -8,7 +8,7 @@
                                 src="{{ asset('assests/img/tel.png') }}" style="width:50px;" /></div>
                         <div style="width:65%;float:left;margin-top:18px;padding-left:5px;">
                             <p style="color:#c09c5a; font-size:18px;padding-left:10px;padding-top:28px;"> +212 (0) 661
-                                326 353 <br>+212 (0) 668 199 773</p>
+                                326 353 <br>+212 (0) 522 972 774</p>
                         </div>
                     </div>
                 </div>

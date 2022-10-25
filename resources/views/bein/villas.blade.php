@@ -1,6 +1,7 @@
 @extends('master')
 @section('title', 'Quality Properties - Villas')
-@section('description', 'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la
+@section('description',
+    'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la
     vente ou à la location, des biens dont la qualité de construction')
 
 @section('stylesheet')
@@ -9,6 +10,9 @@
             .custom-margin {
                 margin-left: 70px !important;
             }
+        }
+        .h3,h3 {
+            font-size: 23px;
         }
     </style>
 @endsection
@@ -73,7 +77,8 @@
                                 @endif
                                 @foreach (json_decode($villa->images, true) as $image)
                                     @if ($loop->first)
-                                        <img src="{{ Voyager::image($image) }}" alt="{{ $villa->title }}" class="img-posts" />
+                                        <img src="{{ Voyager::image($image) }}" alt="{{ $villa->title }}"
+                                            class="img-posts" />
                                     @endif
                                 @endforeach
                                 <div class="post-detail">
@@ -91,4 +96,3 @@
         </div>
     </div>
 @endsection
-

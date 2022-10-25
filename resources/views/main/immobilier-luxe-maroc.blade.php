@@ -24,14 +24,14 @@
             </div>
 
             <div class="col-md-5 text-center">
-                <img src="{{ asset('assests/img/img-qsn-0.jpg') }}" style="width:80%;" />
+                <img src="{{ asset('assests/img/villa-maroc.jpg') }}" style="width:80%; padding-top: 10px;" />
 
             </div>
         </div>
         <div class="row  p-5 row-1140" style="min-height: 500px;padding-bottom:40px;">
             <div class="bg-div-qsn"></div>
             <div class="col-md-5 text-center">
-                <img src="{{ asset('assests/img/img-qsn-2.jpg') }}" style="width:80%;" />
+                <img src="{{ asset('assests/img/img-qsn-2.jpg') }}" style="width:80%; " />
 
             </div>
 

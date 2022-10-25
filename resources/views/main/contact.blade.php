@@ -35,7 +35,7 @@
                     <img src="{{ asset('assests/img/logo--footer.png') }}" style="max-width: 240px;margin-top: 30px;" />
                     <p style="color:white;font-size:16px;margin-top:40px;"><img
                             src="{{ asset('assests/img/tel-white.png') }}" style="width:30px;" /><span
-                            style=" vertical-align: middle;"> +212 (0) 661 326 353</span>
+                            style=" vertical-align: middle;"> +212 (0) 661 326 353 / +212 (0) 522 972 774</span>
                     <p>
                     <div style="margin-top: 30px;">
                         <a href="https://www.facebook.com/Immobillierdeluxe.Maroc"><img

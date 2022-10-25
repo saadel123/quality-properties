@@ -1,9 +1,7 @@
 @extends('master')
 
-
 @section('content')
     <div class="container-fluid navbarColor">
-
         <div class="row  p-5 row-1140" style="min-height: 500px;padding-bottom:100px;">
             <div class="col-md-12">
                 <div class="nos-biens-posts text-left">
@@ -19,7 +17,7 @@
                                     </div>
                                 @endforeach
                                 <a class="prev" onclick="plusSlides(-1)">❮</a>
-                                <a class="next" onclick="plusSlides(1)">❯</a>
+                                <a class="next" onclick="plusSlides(1)"></a>
                                 <div class="caption-container">
                                     <p id="caption"></p>
                                 </div>
@@ -36,7 +34,11 @@
                             <div class="detail-modal2">
                                 <div class="">
                                     <span class="position-detail-modal2">{{ $data->ville }}<i
-                                            class="fa fa-map-marker"></i></span><br> <br>
+                                            class="fa fa-map-marker"></i></span><br>
+                                    <span
+                                        class="position-detail-modal2">{{ $data->type === 1 ? 'À vendre' : 'À louer' }}</span><br>
+                                    <span class="position-detail-modal2">Référence : {{ $data->reference }}</span>
+                                    <br><br>
                                     <p>{!! $data->body !!}</p>
                                 </div>
                             </div>
@@ -46,7 +48,7 @@
                                 </div>
                                 <div class="phone">
                                     <p>+212 (0) 661 326 353</p>
-                                    <p>+212 (0) 668 199 773</p>
+                                    <p>+212 (0) 522 972 774</p>
                                 </div>
                             </div>
                         </div>
@@ -61,15 +63,12 @@
     <script>
         var slideIndex = 1;
         showSlides(slideIndex);
-
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
-
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
-
         function showSlides(n) {
             var i;
             var slides = document.getElementsByClassName("mySlides");
