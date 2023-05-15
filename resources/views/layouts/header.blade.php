@@ -48,14 +48,14 @@
                         <ul class="nav navbar-nav menu">
                             <li><a href="/">Accueil</a></li>
                             <li><a href="{{ url('/immobilier-luxe-maroc') }}">Qui sommes-nous</a></li>
-                            <li><a href="{{ url('/achat-vente-location-immobilier-luxe') }}">Nos services</a></li>
-                            <li><a href="#">Nos Biens </a>
+                              <li><a href="#">Les Biens </a>
                                 <ul class="sous-menu">
                                     <li><a href="{{ url('/location-vente-villa-maroc') }}">Villas</a></li>
                                     <li><a href="{{ url('/appartement-a-vendre') }}">Appartements</a></li>
                                     <li><a href="{{ url('/terrain-a-vendre-au-maroc') }}">Terrains</a></li>
                                 </ul>
                             </li>
+                            <li><a href="{{ url('/achat-vente-location-immobilier-luxe') }}">Nos services</a></li>
                             <!--
                         <li><a href="nos-plus.php">Nos plus</a></li>
                       <li><a href="actualite.php">Actualité</a></li>

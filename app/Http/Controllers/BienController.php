@@ -41,7 +41,7 @@ class BienController extends Controller
         $mots = request()->query('mots');
         $category = 2;
         $villas = Post::when($mots, function ($query, $search) {
-            return $query->where('title', 'like', "%{$search}%");
+            return $query->where('title', 'like', "%{$search}%")->andWhere('ville', 'like', "%{$search}%")->orWhere('body', 'like', "%{$search}%");
         })->when($type, function ($query, $type) {
             return $query->where('type', '=', "{$type}");
         })->when($category, function ($query, $category_id) {
@@ -56,7 +56,7 @@ class BienController extends Controller
         $mots = request()->query('mots');
         $category = 1;
         $villas = Post::when($mots, function ($query, $search) {
-            return $query->where('title', 'like', "%{$search}%");
+            return $query->where('title', 'like', "%{$search}%")->orWhere('ville', 'like', "%{$search}%")->orWhere('body', 'like', "%{$search}%");
         })->when($type, function ($query, $type) {
             return $query->where('type', '=', "{$type}");
         })->when($category, function ($query, $category_id) {

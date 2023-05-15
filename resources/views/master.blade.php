@@ -32,7 +32,7 @@
         integrity="sha512-hwwdtOTYkQwW2sedIsbuP1h0mWeJe/hFOfsvNKpRB3CkRxq8EW7QMheec1Sgd8prYxGm1OM9OZcGW7/GUud5Fw=="
         crossorigin="anonymous" />
     <link rel="icon" type="image/png" href="{{ asset('assests/img/fav-icon.png') }}">
-    <link rel="stylesheet" href="{{ asset('assests/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assests/css/style.css') }}?v=2">
 
     @yield('stylesheet')
 </head>

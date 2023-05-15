@@ -3,7 +3,39 @@
 @section('description',
     'Agence immobilière Casablanca - Villa a vendre - Casa Anfa - Villa Casa Anfa - Villa de luxe
     Casablanca - Villa Casablanca')
+
+@section('stylesheet')
+    <style>
+        .carousel-caption {
+            text-shadow: none;
+        }
+        .slide-text span {
+            padding-left: 27px!important;
+            /* padding: 16px 29px 6px 10px; */
+            margin-left: 1px;
+            margin-right: 7px;
+        }
+
+        .slide-text-2 {
+            width: 780px;
+        }
+
+        .slide-text-2 .title {
+            font-size: 21px;
+            margin-right: 40px;
+        }
+
+        .slide-text-2 .detail {
+            color: #8d8d8d;
+
+        }
+        .nos-biens {
+    width: 100%;
+}
+    </style>
+@endsection
 @section('content')
+
     <div class="container-fluid">
         <div class="row slide-part">
             <div class="col-md-12 " style="margin: 0px;padding: 0px;">
@@ -23,8 +55,9 @@
                             <div class="item {{ $loop->first ? 'active' : '' }}">
                                 <img class="" src="{{ Voyager::image($slide->image) }}" style="width:100%;">
                                 <div class="carousel-caption">
-                                    <div class="slide-text"><span style="">{{ $slide->type }}</span><a
-                                            href="{{ $slide->lien }}" style="">voir
+                                    <div class="slide-text">
+                                        <span class="span-text">{{ $slide->type }}</span>
+                                        <a href="{{ url('bein/'.$slide->lien)  }}" style="">voir
                                             plus <i class="fa fa-angle-right"></i></a>
                                     </div>
                                     <div class="slide-text-2">
@@ -34,7 +67,6 @@
                                 </div>
                             </div>
                         @endforeach
-
                         {{-- <div class="item">
                             <img class="" src="{{ asset('assests/img/slide-2.jpg') }}" style="width:100%;">
                             <div class="carousel-caption">
@@ -83,15 +115,14 @@
                             <ul class="nav navbar-nav menu">
                                 <li><a href="./">Accueil</a></li>
                                 <li><a href="{{ url('/immobilier-luxe-maroc') }}">Qui sommes-nous</a></li>
-                                <li><a href="{{ url('/achat-vente-location-immobilier-luxe') }}">Nos services</a></li>
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos
-                                        Biens </a>
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Les Biens </a>
                                     <ul class="dropdown-menu sous-menu">
                                         <li><a href="{{ url('/location-vente-villa-maroc') }}">Villas</a></li>
                                         <li><a href="{{ url('/appartement-a-vendre') }}">Appartements</a></li>
                                         <li><a href="{{ url('/terrain-a-vendre-au-maroc') }}">Terrains</a></li>
                                     </ul>
                                 </li>
+                                <li><a href="{{ url('/achat-vente-location-immobilier-luxe') }}">Nos services</a></li>
                                 <li><a href="{{ url('/actualite-immobilier-maroc') }}">Blog</a></li>
                                 <li><a href="{{ url('/contact') }}">Contact</a></li>
                             </ul>
@@ -112,7 +143,7 @@
                 </div>
                 <div class="col-sm-3" style="margin-top:-60px;">
                     <div class="qui-sommes-nous">
-                        <a href="qui-sommes-nous.php">
+                        <a href="{{ url('/immobilier-luxe-maroc') }}">
                             <h2 class="qui">Qui sommes-nous</h2>
                         </a><br />
                         <p class="desc-qui">
@@ -131,7 +162,7 @@
                 <div class="col-sm-3" style="margin-left:-60px;margin-top:90px;">
                     <div class="col-sm-3">
                         <div class="qui-sommes-nous" style="margin-left:55px;margin-top:-60px !important;">
-                            <a href="nous-services.php">
+                            <a href="{{ url('/achat-vente-location-immobilier-luxe') }}">
                                 <h2 class="noserv">Nos Services</h2>
                             </a><br />
                             <p class="desc-nos">
@@ -155,27 +186,33 @@
         </div>
     </div>
     <div class="container-fluid navbarColor">
-        <div class="row  p-5 row-1140" style="min-height: 500px;padding-bottom:50px;">
+        <div class="row  p-5 row-1140" style="min-height: 500px;padding-bottom: 40px; padding-top:15px">
             <div class="col-md-12" data-aos="fade-up" data-aos-delay="50" data-aos-duration="2600"
                 style="margin-top: -64px;">
-                <h2 class="title " style="color: #b39773 !important;text-align: center;">Nos Biens</h2>
+                <h2 class="title " style="color: #b39773 !important;text-align: center;">Les Biens</h2>
                 <div class="nos-biens">
                     <div class="row">
-                        <a href="{{ url('/location-vente-villa-maroc') }}">
-                            <div class="col-md-4">
+                        <a href="{{ url('/recherche-villa?type=1') }}">
+                            <div class="col-md-3">
                                 <img src="{{ asset('assests/img/nos-biens-img-2.png') }}" style="width: 100%;" />
                                 <h3> Villas </h3>
                             </div>
                         </a>
+                          <a href="{{ url('/recherche-villa?type=2') }}">
+                            <div class="col-md-3">
+                                <img src="{{ asset('assests/img/nos-biens-img-4.jpg') }}" style="width: 100%;" />
+                                <h3> Villas </h3>
+                            </div>
+                        </a>
                         <a href="{{ url('/appartement-a-vendre') }}">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <img src="{{ asset('assests/img/nos-biens-img-1.png') }}" style="width: 100%;" />
                                 <h3> Appartements </h3>
                             </div>
                         </a>
                         <a href="{{ url('/terrain-a-vendre-au-maroc') }}">
-                            <div class="col-md-4">
-                                <img src="{{ asset('assests/img/nos-biens-img-3.png') }}" style="width: 100%;" />
+                            <div class="col-md-3">
+                                <img src="{{ asset('assests/img/nos-biens-img-3-2.png') }}" style="width: 100%;" />
                                 <h3> Terrains </h3>
                             </div>
                         </a>
@@ -192,7 +229,7 @@
                     Notre mission n'est pas seulement de procurer à nos clients des résidences de luxe mais de nous assurer
                     que la qualité de celles-ci répond à leurs expectatives dans tous les domaines qui leur importent.
                 </h3>
-                <div href="actualites.php" onclick="document.location.href = '{{ url('/actualite-immobilier-maroc') }}'"
+                <div href="{{ url('/actualite-immobilier-maroc') }}" onclick="document.location.href = '{{ url('/actualite-immobilier-maroc') }}'"
                     id="arti" class="art"
                     style="font-size: 25px;cursor: pointer;color: #b39773;text-align: center;margin: 50px 0px;text-decoration:underline;">
                     <p>Blog

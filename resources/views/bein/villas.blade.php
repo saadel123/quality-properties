@@ -1,7 +1,6 @@
 @extends('master')
 @section('title', 'Quality Properties - Villas')
-@section('description',
-    'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la
+@section('description', 'Quality Properties, spécialiste de l\'immobilier de luxe et de prestige, vous propose, à la
     vente ou à la location, des biens dont la qualité de construction')
 
 @section('stylesheet')
@@ -11,9 +10,12 @@
                 margin-left: 70px !important;
             }
         }
-        .h3,h3 {
+          .h3,h3 {
             font-size: 23px;
         }
+        .post-detail {
+    height: 0px;
+}
     </style>
 @endsection
 @section('content')
@@ -77,13 +79,13 @@
                                 @endif
                                 @foreach (json_decode($villa->images, true) as $image)
                                     @if ($loop->first)
-                                        <img src="{{ Voyager::image($image) }}" alt="{{ $villa->title }}"
-                                            class="img-posts" />
+                                        <img src="{{ Voyager::image($image) }}" alt="{{ $villa->title }}" class="img-posts" />
                                     @endif
                                 @endforeach
                                 <div class="post-detail">
                                     <h3> {{ $villa->title }} </h3>
-                                    <h5 style="">{{ $villa->ville }}<i class="fa fa-map-marker"></i> </h5>
+                                    <h5 >{{ $villa->ville }}<i class="fa fa-map-marker"></i> </h5>
+                                    <h5 > {{ $data->type === 1 ? 'À vendre' : 'À louer' }}</h5>
                                     <p>
                                         {!! Str::limit($villa->body, 100, '...') !!}
                                     </p>
@@ -96,3 +98,4 @@
         </div>
     </div>
 @endsection
+
